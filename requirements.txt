@@ -21,4 +21,4 @@ PyJWT==2.8.0
 SQLAlchemy==2.0.21
 SQLAlchemy-serializer==1.4.1
 typing_extensions==4.7.1
-Werkzeug==3.0.0
+Werkzeug==2.2.3
