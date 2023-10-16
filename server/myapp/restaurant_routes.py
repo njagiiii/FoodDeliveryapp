@@ -1,5 +1,5 @@
-from myapp.models import Restaurant,Menu,User,Order,OrderItem
-from myapp import db
+from server.myapp.models import Restaurant,Menu,User,Order,OrderItem
+from server.myapp import db
 from flask import jsonify,request,Blueprint,request
 from flask_jwt_extended import jwt_required,get_jwt_identity
 from flask_cors import cross_origin

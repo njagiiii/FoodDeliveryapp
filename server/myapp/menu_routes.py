@@ -1,5 +1,5 @@
 from flask import Blueprint, request,jsonify
-from myapp.models import Menu
+from server.myapp.models import Menu
 from flask_jwt_extended import jwt_required,get_jwt_identity
 from flask_cors import cross_origin
 

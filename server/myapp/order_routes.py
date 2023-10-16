@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from myapp.models import Order
-from myapp import db
+from server.myapp.models import Order
+from server.myapp import db
 
 # Create a blueprint for orders
 order_bp = Blueprint('orders', __name__)
