@@ -1,5 +1,7 @@
 
 import React, { useState,useEffect } from "react";
+import { useParams } from 'react-router-dom';
+
 
 
 function RestaurantMenu() {
@@ -8,6 +10,7 @@ function RestaurantMenu() {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showToast, setShowToast] = useState(false);
+  const { restaurant_id } = useParams();
   
 
 
@@ -18,7 +21,7 @@ function RestaurantMenu() {
         // Get the JWT token from wherever it is stored (e.g., localStorage)
         const accessToken = localStorage.getItem('accessToken');
   
-        const response = await fetch('http://127.0.0.1:5000/menus/menus', {
+        const response = await fetch(`http://127.0.0.1:5000/menus/restmenus/${restaurant_id}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${accessToken}`, // Include the JWT token in the headers

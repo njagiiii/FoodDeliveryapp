@@ -7,7 +7,7 @@ from flask_jwt_extended import (create_access_token,create_refresh_token,
                                 get_jwt)
 from flask_cors import cross_origin
 
-# register blueprints for authentication
+# create blueprints for authentication
 auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/register', methods=['GET', 'POST'])

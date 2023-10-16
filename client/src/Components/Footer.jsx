@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p className="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            <p className="text-justify">We believe that food has a unique power to bring people together. Through DishDishes, we aim to foster a sense of community among our users, partners, and employees. We're more than a food delivery app; we're a community of food enthusiasts who appreciate the art of dining.</p>
           </div>
 
           <div className="col-xs-6 col-md-3">

@@ -1,4 +1,4 @@
-
+import os
 from flask import Flask,Blueprint,jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -16,7 +16,7 @@ CORS(app, origins="http://localhost:5173")
 
 # my configs
 app.config['SECRET_KEY'] = '266ceaf6c1874e0484d761f1360708eb'
-app.config["SQLALCHEMY_DATABASE_URI"]= 'sqlite:///dev.db'
+app.config["SQLALCHEMY_DATABASE_URI"]= os.environ.get('DATABASE_URI')
 app.config['JWT_SECRET_KEY']='0126766336ea640fa941e53a'
 
 

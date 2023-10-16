@@ -7,7 +7,7 @@ const Navbar = () => {
 
   if(location.pathname === '/account'){
     return null
-  }else if (location.pathname === '/menu'){
+  }else if (location.pathname.startsWith('/restaurant')){
     return null
   }
 

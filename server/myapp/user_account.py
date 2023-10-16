@@ -7,6 +7,28 @@ from flask_cors import cross_origin
 user_bp= Blueprint('users', __name__)
 
 # user related activities
+
+@user_bp.route('/users', methods=['GET'])
+
+def get_all_users():
+    try:
+        users = User.query.all()
+        user_list = []
+
+        for user in users:
+            user_data = {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                # Include other user attributes as needed
+            }
+            user_list.append(user_data)
+
+        return jsonify(user_list), 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
 # user to see their profile only
 @user_bp.route('/account', methods=['GET'])
 @jwt_required()

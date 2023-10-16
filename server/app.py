@@ -1,3 +1,4 @@
+
 from myapp import app,models,jwt,db
 from flask import jsonify
 from myapp.auth import auth_bp

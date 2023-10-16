@@ -25,7 +25,7 @@ function App() {
         <Route path='/register' element={<RegistrationForm />}></Route>
         <Route path='/login' element={<LoginForm />}></Route>
         <Route path='/account' element={<UserAccount/>}></Route>
-        <Route path='/menu' element={<RestaurantMenu/>}></Route>
+        <Route path="/restaurant/:restaurant_id" element={<RestaurantMenu/>}></Route>
        
 
       </Routes>

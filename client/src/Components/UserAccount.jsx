@@ -107,8 +107,8 @@ const UserAccount = () => {
           </div>
         </div>
       </nav>
-      <h2 class="col mt-5 text-center">Welcome To CJ’s!!</h2>
-      <div class="col text-center mb-0 text-gray">Welcome to CJ's delicious universe. Everything from our Big on Breakfast, Perfected Drinks, Decadent to your Generous Big Meals Right here at your fingertips. ORDER NOW.
+      <h2 className="col mt-5 text-center">Welcome To DishDishes!!</h2>
+      <div className="col text-center mb-0 text-gray">Welcome to DishDishes delicious universe. Everything from our Big on Breakfast, Perfected Drinks, Decadent to your Generous Big Meals Right here at your fingertips. ORDER NOW.
       </div>
       <div className="container menu-parent-div text-center">
         {/* Display restaurant cards */}
@@ -118,7 +118,7 @@ const UserAccount = () => {
             <div className="col-lg-6 mb-4" key={restaurant.id}>
               <div className="card menu-card bg-light" style={{ width: "30rem" }}>
                 {/* Add a link to the restaurant's details page */}
-                <Link to='/menu'>
+                <Link to={`/restaurant/${restaurant.id}`}>
                 <img
                   src={
                     index === 0

@@ -42,12 +42,13 @@ def get_all_menus():
     return jsonify(serialized_menus), 200
 
 
-@menu_bp.route('/menus/<int:restaurant_id>', methods=['GET'])
+@menu_bp.route('/restmenus/<int:restaurant_id>', methods=['GET'])
 @jwt_required()
 @cross_origin(origin='http://localhost:5173', supports_credentials=True)
 
 def get_menus_for_restaurant(restaurant_id):
     menus = Menu.query.filter_by(restaurant_id=restaurant_id).all()
+    
     if not menus:
         return jsonify({"message": "No menus found for this restaurant"}), 404
     
@@ -59,4 +60,38 @@ def get_menus_for_restaurant(restaurant_id):
         "restaurant_id": menu.restaurant_id,
         "image_url": menu.image_url
     } for menu in menus]
+    
     return jsonify(serialized_menus), 200
+
+
+@menu_bp.route('/update_menu/<int:menu_id>', methods=['PUT'])
+def update_menu(menu_id):
+    # Get the menu item to be updated by its ID
+    menu = Menu.query.get(menu_id)
+
+    if not menu:
+        return jsonify({"message": "Menu not found"}), 404
+
+    # Get updated data from the request body
+    data = request.get_json()
+
+    if 'name' in data:
+        menu.name = data['name']
+
+    if 'description' in data:
+        menu.description = data['description']
+
+    if 'price' in data:
+        menu.price = data['price']
+
+    if 'restaurant_id' in data:
+        menu.restaurant_id = data['restaurant_id']
+
+    if 'image_url' in data:
+        menu.image_url = data['image_url']
+
+    # Save the updated menu item
+    menu.save()
+
+    return jsonify({"message": "Menu updated successfully"}), 200
+
