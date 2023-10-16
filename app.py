@@ -1,13 +1,13 @@
 
-from myapp import app,models,jwt,db
+from server.myapp import app,models,jwt,db
 from flask import jsonify
-from myapp.auth import auth_bp
-from myapp.user_account import user_bp
-from myapp.restaurant_routes import restaurant_bp
-from myapp.menu_routes import menu_bp
-from  myapp.order_routes import order_bp
-from myapp.association_routes import associate_bp
-from myapp.models import TokenBlocklist
+from server.myapp.auth import auth_bp
+from server.myapp.user_account import user_bp
+from server.myapp.restaurant_routes import restaurant_bp
+from server.myapp.menu_routes import menu_bp
+from  server.myapp.order_routes import order_bp
+from server.myapp.association_routes import associate_bp
+from server.myapp.models import TokenBlocklist
 
 
 
