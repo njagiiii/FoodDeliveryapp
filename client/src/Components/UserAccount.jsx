@@ -22,7 +22,7 @@ const UserAccount = () => {
     const accessToken = localStorage.getItem('accessToken');
     const fetchdata =async () =>{
       try{
-        const response = await fetch("http://127.0.0.1:5000/users/account",{
+        const response = await fetch("https://flask-apidelivery.onrender.com/users/account",{
           method:'GET',
           headers:{
             'Authorization':`Bearer ${accessToken}`,
@@ -49,7 +49,7 @@ const UserAccount = () => {
     
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/restaurants/dashboard', {
+        const response = await fetch('https://flask-apidelivery.onrender.com/restaurants/dashboard', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -73,7 +73,7 @@ const UserAccount = () => {
     // Send a request to log the user out on the server
     const accessToken = localStorage.getItem('accessToken');
     try {
-      const response = await fetch('http://127.0.0.1:5000/auth/logout', {
+      const response = await fetch('https://flask-apidelivery.onrender.com/auth/logout', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,

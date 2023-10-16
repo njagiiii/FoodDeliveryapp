@@ -21,7 +21,7 @@ function RestaurantMenu() {
         // Get the JWT token from wherever it is stored (e.g., localStorage)
         const accessToken = localStorage.getItem('accessToken');
   
-        const response = await fetch(`http://127.0.0.1:5000/menus/restmenus/${restaurant_id}`, {
+        const response = await fetch(`https://flask-apidelivery.onrender.com/menus/restmenus/${restaurant_id}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${accessToken}`, // Include the JWT token in the headers
@@ -45,7 +45,7 @@ function RestaurantMenu() {
     const fetchdata =async () =>{
       try{
         const accessToken = localStorage.getItem('accessToken');
-        const response = await fetch("http://127.0.0.1:5000/users/account",{
+        const response = await fetch("https://flask-apidelivery.onrender.com/users/account",{
           method:'GET',
           headers:{
             'Authorization':`Bearer ${accessToken}`,
