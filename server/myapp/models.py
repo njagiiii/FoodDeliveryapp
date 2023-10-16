@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy import BLOB
-from myapp import db
+from server.myapp import db
 
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
