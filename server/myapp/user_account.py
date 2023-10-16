@@ -1,5 +1,5 @@
 from flask import jsonify,request,Blueprint
-from myapp.models import User,Order
+from server.myapp.models import User,Order
 from flask_jwt_extended import jwt_required,get_jwt_identity
 from flask_cors import cross_origin
 
