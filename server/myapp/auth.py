@@ -11,7 +11,7 @@ from flask_cors import cross_origin
 auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
-@cross_origin(origin='http://localhost:3000', supports_credentials=True)
+@cross_origin(origin='http://localhost:5173', supports_credentials=True)
 
 def register_user():
     data =request.get_json()
@@ -55,7 +55,7 @@ def delete_user(user_id):
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
-@cross_origin(origin='http://localhost:3000', supports_credentials=True)
+@cross_origin(origin='http://localhost:5173', supports_credentials=True)
 def login():
      if request.is_json:
             try:
