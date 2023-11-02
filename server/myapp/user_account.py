@@ -9,7 +9,8 @@ user_bp= Blueprint('users', __name__)
 # user related activities
 
 @user_bp.route('/users', methods=['GET'])
-
+@jwt_required()
+@cross_origin(origin='http://localhost:5173', supports_credentials=True)
 def get_all_users():
     try:
         users = User.query.all()
